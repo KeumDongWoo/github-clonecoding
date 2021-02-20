@@ -1,0 +1,6 @@
+.body__container {
+    font-family : 'Roboto' , sans-serif; /* 모든 폰트 roboto 변경불가시 sans-serif */
+    font-size : 16px; /* 기본 폰트 사이즈*/
+    font-weight: 400; /* 기본 사이즈 */
+    color : #333333; /* 기본 글자색 */
+}
