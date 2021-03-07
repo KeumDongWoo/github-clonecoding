@@ -25,9 +25,9 @@ a {
     box-sizing : border-box;
     position : relative;
     color : #333;
-  }
+}
   
-  .btn:hover::before {
+.btn:hover::before {
     content: "";
     position: absolute;
     top: 0;
@@ -35,16 +35,16 @@ a {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.07);
-  }
+}
   
-  .btn.btn--primary {
+.btn.btn--primary {
     border: 1px solid #65b836;
     color: #fff;
     background: #55a532 linear-gradient(#91dd70, #55ae2e);
-  }
+}
 
-  /* INPUT TEXT  */
-  .input--text {
+/* INPUT TEXT  */
+.input--text {
     height : 34px;
     padding : 0 10px;
     border : 1px solid #ddd;
@@ -53,12 +53,12 @@ a {
     outline: none;
     box-shadow:inset 0 1px 2px rgba(0,0,0,0.075);
     font-size: 16px;
-  }
-  .input--text:focus{
+}
+.input--text:focus{
     border-color:#51a7e8;
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),
                 0 0 5px rgba(81,167,232,0.5);
-  }
+}
 
 /* 브라우저 업체별 접두사  */
 .input--text::-webkit-input-placeholder {
@@ -81,11 +81,36 @@ a {
     float: left;
 }
 .float--right {
-  float: right;
+    float: right;
+}
+
+/* SUMMARY */
+.summary__title {
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+.summary__description {
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+}
+
+/* SECTION & INNER*/
+.section {
+  position: relative;
+}
+.section .inner {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
 }
 
 
-  /* HEADER */
+/* HEADER */
 header {
     border-bottom: 1px solid rgba(0,0,0,0,.75);
     box-shadow: 0 0 5px rgba(0,0,0,0.75);
@@ -160,4 +185,68 @@ header .sub-menu li a {
 }
 header .sub-menu li a:hover {
   color: #4078c0; 
+}
+
+/* VISUAL */
+.section--visual {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: cover;
+}
+.section--visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.3);
+}
+.section--visual .inner {
+  padding : 160px 0;
+  display: flex;
+}
+
+.section--visual .summary__title {
+  color : #FFF;
+  font-size : 54px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.25),
+               0 1px 25px rgba(0,0,0,.75);
+}
+.section--visual .summary__description {
+  color : #FFF;
+  text-shadow: 0 1px 1px rgba(0,0,0,.25),
+               0 1px 25px rgba(0,0,0,.75);
+}
+#sign-form{
+  width: 340px;
+}
+#sign-form .input--text{
+  width: 100%;
+  height: 40px;
+}
+#sign-form li {
+  margin-bottom: 17px;
+}
+#sign-form li:last-child{
+  margin-bottom: 0;
+}
+#sign-form .input--text{
+  width: 100%;
+  height: 40px;
+}
+#sign-form .caption{
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, .6);
+  line-height: 1.5;
+  text-align: center;
+}
+#sign-form [type="submit"]{
+  width: 100%;
+  height: 62px;
+  padding: 0 25px;
+  font-size: 20px;
+  justify-content: center; /* .btn display:inline-flex 이기때문에 justify 써야함*/
 }
