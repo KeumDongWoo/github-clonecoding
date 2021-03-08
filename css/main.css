@@ -207,7 +207,11 @@ header .sub-menu li a:hover {
   padding : 160px 0;
   display: flex;
 }
-
+.section--visual .summary {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-right: 90px;
+}
 .section--visual .summary__title {
   color : #FFF;
   font-size : 54px;
