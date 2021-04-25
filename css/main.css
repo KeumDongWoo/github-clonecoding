@@ -186,7 +186,17 @@ header .sub-menu li a {
 header .sub-menu li a:hover {
   color: #4078c0; 
 }
-
+#toggle-btn {
+  display: none;
+  background: url("../img/toggle-btn.svg");
+  width: 18px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+}
 /* VISUAL */
 .section--visual {
   position: relative;
@@ -259,7 +269,7 @@ header .sub-menu li a:hover {
   padding-top: 66px;
 }
 .section--feature .summary {
-  width: 820px;
+  max-width: 820px;
   margin: 0 auto;
   text-align: center;
 }
@@ -273,11 +283,11 @@ header .sub-menu li a:hover {
   position: relative;
 }
 .section--feature .video .video-ratio iframe {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 .section--feature .tiles {
   border-top: 1px solid #e5e5e5;
@@ -286,24 +296,39 @@ header .sub-menu li a:hover {
 .section--feature .tiles .inner {
   max-width: 1200px;
 }
+/* Float을 사용한 방법 */
 .section--feature .tiles ul {
-  display : grid; /* 적용되지않는 익스플로어도있음.. */
-  grid-template-columns: repeat(4,1fr);
 
 }
 .section--feature .tiles li {
-  padding : 34px 24px;
-  text-align : center;
+  width: 25%;
+  padding: 34px 24px;
+  float: left;
+  text-align: center;
   line-height: 1.5;
   border-right: 1px solid #e5e5e5;
   box-sizing: border-box;
 }
+/* Grid를 사용한 방법 */
+/*
+  .section--feature .tiles ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .section--feature .tiles li {
+    padding: 34px 24px;
+    text-align: center;
+    line-height: 1.5;
+    border-right: 1px solid #e5e5e5;
+    box-sizing: border-box;
+  }
+*/
 .section--feature .tiles li:last-child {
   border-right: none;
 }
 .section--feature .tiles li img {
   max-width: 100%;
-  padding : 14px 10% 24px;
+  padding: 14px 10% 24px;
   box-sizing: border-box;
 }
 .section--feature .tiles li h3 {
@@ -397,80 +422,4 @@ footer .logo {
 }
 footer .logo svg:hover svg {
   fill: #4078c0;
-}
-
-
-/* MEDIA (반응형웹) */
-@media (max-width: 1024px) {
-  /* 초기화 */
-  header.section .inner { /* 명시도 21점으로 증가 CSS 덮어쓰기위해 */
-    max-width: none;
-    height: auto;
-    padding: 0 20px;
-  }
-  /* 초기화 */
-  header .menu-group,
-  header .sign-group {
-    float: none;
-  }
-  header .menu-group {
-    display: block;
-  }
-  header .logo {
-    padding: 12px 0;
-  }
-  header .main-menu {
-    display: block;
-    margin-bottom: 10px;
-  }
-  header .main-menu li {
-    border-top: 1px solid #e5e5e5;
-  }
-  header .main-menu li a {
-    padding: 16px 0;
-  }
-  header .sign-group {
-    display: block;
-    padding: 10px 0 20px;
-  }
-  header .btn-group {
-    display: block;
-  }
-  header .btn-group .btn {
-    justify-content: center;
-  }
-  header .btn-group .sign-in {
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-  #search-form {
-    margin-top: 12px;
-    margin-right: 0;
-  }
-  #search {
-    width: 100%;
-    height: 42px;
-    text-align: center;
-  } 
-  header .sub-menu {
-    margin-top: 12px;
-    margin-right: 0;
-    justify-content: center;
-  }
-  header .toggle {
-    display: none;
-  }
-  header .toggle.on {
-    display: block; 
-  }
-  #toggle-btn {
-    background: url("../img/toggle-btn.svg");
-    width: 18px;
-    height: 24px;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    cursor: pointer;
-    text-indent: -9999px;
-  }
 }
